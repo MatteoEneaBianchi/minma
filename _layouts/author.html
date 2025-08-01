@@ -2,48 +2,46 @@
 layout: default
 ---
 
-<section class="author-profile">
+<article class="author-page">
 
   <header>
     <h1>{{ page.name }}</h1>
+
     {% if page.avatar %}
-      <img src="{{ page.avatar | relative_url }}" alt="Avatar di {{ page.name }}" class="author-avatar" />
+      <img src="{{ page.avatar }}" alt="Avatar di {{ page.name }}" class="author-avatar" />
     {% endif %}
-  </header>
 
-  {% if page.bio %}
-    <div class="author-bio">
-      <p>{{ page.bio }}</p>
-    </div>
-  {% endif %}
+    {% if page.bio %}
+      <p class="author-bio">{{ page.bio }}</p>
+    {% endif %}
 
-  {% if page.email %}
-    <div class="author-contact">
-      <strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a>
-    </div>
-  {% endif %}
-
-  {% if page.website %}
-    <div class="author-contact">
-      <strong>Sito web:</strong> <a href="{{ page.website }}" target="_blank" rel="noopener">{{ page.website }}</a>
-    </div>
-  {% endif %}
-
-  <section class="author-posts">
-    <h2>Articoli di {{ page.name }}</h2>
-    <ul>
-      {% assign author_id = page.id %}
-      {% assign posts_by_author = site.posts | where:"author", author_id %}
-      {% for post in posts_by_author %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <small> - {{ post.date | date: "%d %b %Y" }}</small>
-        </li>
-      {% endfor %}
-      {% if posts_by_author == empty %}
-        <li>Ancora nessun articolo pubblicato.</li>
+    <ul class="author-contact">
+      {% if page.email %}
+      <li>Email: <a href="mailto:{{ page.email }}">{{ page.email }}</a></li>
+      {% endif %}
+      {% if page.website %}
+      <li>Sito: <a href="{{ page.website }}" target="_blank" rel="noopener">{{ page.website }}</a></li>
       {% endif %}
     </ul>
+  </header>
+
+  <section class="author-posts">
+    <h2>Post scritti da {{ page.name }}</h2>
+
+    {% assign author_id = page.id %}
+    {% assign posts_by_author = site.posts | where: "author", author_id %}
+
+    {% if posts_by_author.size > 0 %}
+      <ul>
+      {% for post in posts_by_author %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a> - <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>Ancora nessun post scritto da {{ page.name }}.</p>
+    {% endif %}
   </section>
 
-</section>
+</article>
