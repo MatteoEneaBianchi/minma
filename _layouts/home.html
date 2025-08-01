@@ -16,7 +16,7 @@ layout: default
   {%- for post in site.posts -%}
     <li class="post-list-item">
       <h2 class="post-list-item__title">
-        <a href="/blog/{{ post.url | escape }}">
+        <a href="{{ post.url | escape }}">
           {{ post.title | escape }}
         </a>
         <hr>
