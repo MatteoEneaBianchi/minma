@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "it" }}">
 <head>
-
-
-
-
-
-
-  <style>
+<title>{% if page.title == "Blog" %}{{ site.blog.title }} <!-- &middot; --> {{ site.tagline }}{% else %}{% if page.tag %}{{ site.data.tags[page.tag].name }}{% else %}{{ page.title }}{% endif %} &#9642; {{ site.blog.title }}{% endif %}</title>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+ <style>
     /* Body */
 body {
     font-family: "Helvetica Neue","Segoe UI", Roboto, Arial, sans-serif;
