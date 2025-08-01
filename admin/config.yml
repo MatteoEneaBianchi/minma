@@ -14,6 +14,7 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Categories", name: "categories", widget: "list", required: false, hint: "Es: misc, news, blog" }
       - { label: "Author", name: "author", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "id", display_fields: ["name"] }
       - { label: "Body", name: "body", widget: "markdown" }
