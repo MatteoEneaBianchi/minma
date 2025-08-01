@@ -19,7 +19,6 @@ layout: default
           {{ post.title | escape }}
         </a>
       </h2>
-      <p class="post-list-item__meta">{{ post.date | date: date_format }}</p>
       <p class="post-list-item__text">
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
