@@ -39,6 +39,11 @@ collections:
         name: "layout"
         widget: "hidden"
         default: "author"
+      - label: "Permalink"
+        name: "permalink"
+        widget: "string"
+        required: false
+        hint: "Inserisci il permalink (es: /authors/m8d/)"
       - label: "Name"
         name: "name"
         widget: "string"
@@ -62,9 +67,3 @@ collections:
         name: "website"
         widget: "string"
         required: false
-        - label: "Permalink"
-        name: "permalink"
-        widget: "string"
-        required: false
-        hint: "Inserisci il permalink (es: /authors/m8d/)"
-
