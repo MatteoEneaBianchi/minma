@@ -1,7 +1,6 @@
 ---
 layout: author
-name: gabby
-id: gmj
-bio: no
-permalink: /gmj
+name: Gabriel Jones
+id: gj
+permalink: /authors/gj/
 ---
