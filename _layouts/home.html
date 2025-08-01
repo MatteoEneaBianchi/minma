@@ -12,6 +12,7 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
 <ul>
+  <hr>
   {%- for post in site.posts -%}
     <li class="post-list-item">
       <h2 class="post-list-item__title">
