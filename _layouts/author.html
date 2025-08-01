@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<section class="author-profile">
+
+  <header>
+    <h1>{{ page.name }}</h1>
+    {% if page.avatar %}
+      <img src="{{ page.avatar | relative_url }}" alt="Avatar di {{ page.name }}" class="author-avatar" />
+    {% endif %}
+  </header>
+
+  {% if page.bio %}
+    <div class="author-bio">
+      <p>{{ page.bio }}</p>
+    </div>
+  {% endif %}
+
+  {% if page.email %}
+    <div class="author-contact">
+      <strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+    </div>
+  {% endif %}
+
+  {% if page.website %}
+    <div class="author-contact">
+      <strong>Sito web:</strong> <a href="{{ page.website }}" target="_blank" rel="noopener">{{ page.website }}</a>
+    </div>
+  {% endif %}
+
+  <section class="author-posts">
+    <h2>Articoli di {{ page.name }}</h2>
+    <ul>
+      {% assign author_id = page.id %}
+      {% assign posts_by_author = site.posts | where:"author", author_id %}
+      {% for post in posts_by_author %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small> - {{ post.date | date: "%d %b %Y" }}</small>
+        </li>
+      {% endfor %}
+      {% if posts_by_author == empty %}
+        <li>Ancora nessun articolo pubblicato.</li>
+      {% endif %}
+    </ul>
+  </section>
+
+</section>
