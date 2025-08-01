@@ -34,7 +34,10 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "ID", name: "id", widget: "string", hint: "Usato per collegare l'autore ai post, es. m8d" }
+      - { label: "ID", name: "id", widget: "string", hint: "Usato per collegare l'autore ai post (es. m8d)" }
       - { label: "Bio", name: "bio", widget: "text", required: false }
       - { label: "Avatar", name: "avatar", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
