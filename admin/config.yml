@@ -29,41 +29,41 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-- name: "authors"
-  label: "Autori"
-  folder: "_authors"
-  create: true
-  slug: "{{slug}}"
-  fields:
-    - label: "Layout"
-      name: "layout"
-      widget: "hidden"
-      default: "author"
-    - label: "Permalink"
-      name: "permalink"
-      widget: "string"
-      required: false
-      hint: "Inserisci il permalink (es: /authors/m8d/)"
-    - label: "Name"
-      name: "name"
-      widget: "string"
-    - label: "ID"
-      name: "id"
-      widget: "string"
-      hint: "Usato per collegare l'autore ai post (es. m8d)"
-    - label: "Bio"
-      name: "bio"
-      widget: "text"
-      required: false
-    - label: "Avatar"
-      name: "avatar"
-      widget: "image"
-      required: false
-    - label: "Email"
-      name: "email"
-      widget: "string"
-      required: false
-    - label: "Website"
-      name: "website"
-      widget: "string"
-      required: false
+  - name: "authors"
+    label: "Autori"
+    folder: "_authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "author"
+      - label: "Permalink"
+        name: "permalink"
+        widget: "string"
+        required: false
+        hint: "Inserisci il permalink (es: /authors/m8d/)"
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "ID"
+        name: "id"
+        widget: "string"
+        hint: "Usato per collegare l'autore ai post (es. m8d)"
+      - label: "Bio"
+        name: "bio"
+        widget: "text"
+        required: false
+      - label: "Avatar"
+        name: "avatar"
+        widget: "image"
+        required: false
+      - label: "Email"
+        name: "email"
+        widget: "string"
+        required: false
+      - label: "Website"
+        name: "website"
+        widget: "string"
+        required: false
