@@ -67,3 +67,20 @@ collections:
         widget: "string"
         required: false
         hint: "Inserisci il permalink (es: /authors/m8d/)"
+  - name: "authors"
+    label: "Autori"
+    folder: "_authors"
+    create: true
+    slug: "{{username}}"
+    fields:
+      - {label: "Nome", name: "name", widget: "string"}
+      - {label: "Username", name: "username", widget: "string"}
+      - {label: "Biografia", name: "bio", widget: "text"}
+      - {label: "Avatar", name: "avatar", widget: "image"}
+      - {label: "Email", name: "email", widget: "string"}
+      - label: "Social"
+        name: "social"
+        widget: "object"
+        fields:
+          - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - {label: "Sito web", name: "website", widget: "string", required: false}
