@@ -16,7 +16,15 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Categories", name: "categories", widget: "list", required: false, hint: "Es: misc, news, blog" }
-      - { label: "Author", name: "author", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "id", display_fields: ["name"] }
+      - { 
+          label: "Author", 
+          name: "author", 
+          widget: "relation", 
+          collection: "authors", 
+          search_fields: ["name"], 
+          value_field: "username", 
+          display_fields: ["name"] 
+        }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "pages"
@@ -33,54 +41,18 @@ collections:
     label: "Autori"
     folder: "_authors"
     create: true
-    slug: "{{slug}}"
-    fields:
-      - label: "Layout"
-        name: "layout"
-        widget: "hidden"
-        default: "author"
-      - label: "Name"
-        name: "name"
-        widget: "string"
-      - label: "ID"
-        name: "id"
-        widget: "string"
-        hint: "Usato per collegare l'autore ai post (es. m8d)"
-      - label: "Bio"
-        name: "bio"
-        widget: "text"
-        required: false
-      - label: "Avatar"
-        name: "avatar"
-        widget: "image"
-        required: false
-      - label: "Email"
-        name: "email"
-        widget: "string"
-        required: false
-      - label: "Website"
-        name: "website"
-        widget: "string"
-        required: false
-      - label: "Permalink"
-        name: "permalink"
-        widget: "string"
-        required: false
-        hint: "Inserisci il permalink (es: /authors/m8d/)"
-  - name: "authors"
-    label: "Autori"
-    folder: "_authors"
-    create: true
     slug: "{{username}}"
     fields:
-      - {label: "Nome", name: "name", widget: "string"}
-      - {label: "Username", name: "username", widget: "string"}
-      - {label: "Biografia", name: "bio", widget: "text"}
-      - {label: "Avatar", name: "avatar", widget: "image"}
-      - {label: "Email", name: "email", widget: "string"}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Username", name: "username", widget: "string", hint: "Usato nei post come 'author'" }
+      - { label: "Biografia", name: "bio", widget: "text", required: false }
+      - { label: "Avatar", name: "avatar", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Permalink", name: "permalink", widget: "string", required: false, hint: "Es: /autori/username/" }
       - label: "Social"
         name: "social"
         widget: "object"
         fields:
-          - {label: "Instagram", name: "instagram", widget: "string", required: false}
-          - {label: "Sito web", name: "website", widget: "string", required: false}
+          - { label: "Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "Sito web", name: "website", widget: "string", required: false }
