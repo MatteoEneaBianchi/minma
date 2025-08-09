@@ -4,7 +4,7 @@ title: Recensione della serie TV "Dark"
 date: 2025-08-01T16:22:30.886Z
 categories:
   - Films
-author: gabrielmatteojones
+author: gmj
 ---
 **"Tutto è connesso"** – questa è la frase chiave che racchiude l’essenza di *Dark*, la prima serie originale tedesca prodotta da Netflix, uscita nel 2017. Un thriller fantascientifico cupo e intricato, che ha conquistato il pubblico internazionale grazie alla sua trama labirintica, l’estetica cinematografica raffinata e la profondità filosofica dei suoi temi.
 
